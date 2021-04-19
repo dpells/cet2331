@@ -95,7 +95,16 @@ tar -tzvf /tmp/StarWars.tar.gz | tee -a $outfile
 blank_line
 
 echo -e "cron jobs:" | tee -a $outfile
+echo -e "root: " | tee -a $outfile
 crontab -l | sed '/^$/d' |  tee -a $outfile
+blank_line
+
+echo -e "linuxuser: " | tee -a $outfile
+crontab -u linuxuser -l | sed '/^$/d' | tee -a $outfile
+blank_line
+
+echo -e "all: " | tee -a $outfile
+cat /etc/crontab | sed '/^$/d' | tee -a $outfile
 blank_line
 
 package_check 10 moon-buggy
