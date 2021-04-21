@@ -90,8 +90,8 @@ check_existence 6 /home/StarWars/host.txt f
 tail -5 /home/StarWars/host.txt | tee -a $outfile
 blank_line
 
-check_existence 7 /tmp/StarWars.tar.gz f
-tar -tzvf /tmp/StarWars.tar.gz | tee -a $outfile
+check_existence 7 /tmp/starwars.tar.gz f
+tar -tzvf /tmp/starwars.tar.gz | tee -a $outfile
 blank_line
 
 echo -e "cron jobs:" | tee -a $outfile
